@@ -1,5 +1,10 @@
 package HDT3;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args) {
@@ -37,4 +42,38 @@ public class Main{
         
     }
 
+    public ArrayList<Integer> randomList(int n) {
+        Random r = new Random();
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i <n; i++) {
+            list.add(r.nextInt(3000) + 1);
+        }
+        return list;
+    }
+
+    public void writeFile(ArrayList<Integer> list, String file) {
+        try (FileWriter wr = new FileWriter(new File(file))) {
+            for (int i : list) {
+                wr.write(i + " ");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al escribir");
+        }
+    }
+
+    public ArrayList<Integer> readFile(String file) {
+        try ( Scanner sc = new Scanner(new File(file))) {
+            ArrayList<Integer> list = new ArrayList<>();
+            String text = sc.nextLine();
+            String[] txt = text.split(" ");
+            for (var x : txt) {
+                list.add(Integer.parseInt(x));
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println("Error en la lectura");
+        }
+        return null;
+    }
 }
