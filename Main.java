@@ -1,23 +1,30 @@
 package HDT3;
 import java.io.File;
 import java.io.FileWriter;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args) {
+
+        int[] list;
+        
+
         //QuickSort:
-        // ISort sorter = new QuickSort();
-        // int[] arr = {10, 7, 8, 9, 1, 5};
-        // arr = sorter.sort(arr);
+        ISort sorter = new QuickSort();
+        list = randomList(3000);
+        list = sorter.sort(list);
+        writeFile(list, "quick.txt");
+        list = sorter.sort(list);
         // System.out.println("Sorted array: " + Arrays.toString(arr));
 
         //MergeSort:
         // var arr = new int[] {3, 9, 10, 1, 8, 7, 5, 2};
-        // ISort ordenar = new MergeSort();
-        // var array = ordenar.sort(arr);
+        ISort ordenar = new MergeSort();
+        list = ordenar.sort(list);
+        writeFile(list, "merge.txt");
+        list = ordenar.sort(list);
         // System.out.println("El resultado es:");
         // for (int element: array) {
         //     System.out.print(element + " ");
@@ -27,31 +34,38 @@ public class Main{
         // RadixSort:
         // int arr[] = { 170, 45, 75, 90, 802, 24, 2, 66 };
         // int n = arr.length;
-        // RadixSort rs = new RadixSort();
-        // arr = rs.sort(arr);
+        RadixSort rs = new RadixSort();
+        list = randomList(3000);
+        list = rs.sort(list);
+        writeFile(list, "radix.txt");
+        list = rs.sort(list);
         // RadixSort.print(arr, n);
          
         
 
         //GnomeSort:
-        int arr[] = { 34, 2, 10, -9 };
+        //int arr[] = { 34, 2, 10, -9 };
         GnomeSort gs = new GnomeSort();
-        arr = gs.sort(arr);
-        System.out.println(Arrays.toString(arr));
+        list = randomList(3000);
+        list = gs.sort(list);
+        writeFile(list, "gnome.txt");
+        list = gs.sort(list);
+        //System.out.println(Arrays.toString(arr));
 
         
+
     }
 
-    public ArrayList<Integer> randomList(int n) {
+    public static int[] randomList(int n) {
         Random r = new Random();
-        ArrayList<Integer> list = new ArrayList<>();
+        int[] list = new int[n];
         for (int i = 0; i <n; i++) {
-            list.add(r.nextInt(3000) + 1);
+            list[i] = r.nextInt(3000) +1;
         }
         return list;
     }
 
-    public void writeFile(ArrayList<Integer> list, String file) {
+    public static void writeFile(int[] list, String file) {
         try (FileWriter wr = new FileWriter(new File(file))) {
             for (int i : list) {
                 wr.write(i + " ");
@@ -61,13 +75,14 @@ public class Main{
         }
     }
 
-    public ArrayList<Integer> readFile(String file) {
+    public static int[] readFile(String file) {
         try ( Scanner sc = new Scanner(new File(file))) {
-            ArrayList<Integer> list = new ArrayList<>();
+
             String text = sc.nextLine();
             String[] txt = text.split(" ");
-            for (var x : txt) {
-                list.add(Integer.parseInt(x));
+            int[] list = new int[txt.length];
+            for (int i = 0; i < txt.length; i++) {
+                list[i] = Integer.parseInt(txt[i]);
             }
             return list;
 
