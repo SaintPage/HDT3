@@ -4,7 +4,10 @@ import java.io.FileWriter;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-
+/**
+ * Programa para realizar algoritmos de ordenamiento
+ * @author SaintPage Ultimate-Truth-Seeker
+ */
 public class Main{
     public static void main(String[] args) {
 
@@ -65,6 +68,11 @@ public class Main{
         return list;
     }
 
+    /**
+     * escribe en un archivo los enteros de un arreglo separados por espacios
+     * @param list el arreglo con los enteros
+     * @param file nombre del archivo
+     */
     public static void writeFile(int[] list, String file) {
         try (FileWriter wr = new FileWriter(new File(file))) {
             for (int i : list) {
@@ -75,6 +83,11 @@ public class Main{
         }
     }
 
+    /**
+     * lee un archivo de enteros separados por espacios
+     * @param file el nombre del archivo
+     * @return el arreglo de los enteros leídos
+     */
     public static int[] readFile(String file) {
         try ( Scanner sc = new Scanner(new File(file))) {
 

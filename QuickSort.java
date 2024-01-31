@@ -1,5 +1,8 @@
 package HDT3;
-
+/**
+ * Clase que implementa un ordenamiento quick sort
+ * @author SaintPage, colaborativo
+ */
 public class QuickSort implements ISort {
 
     @Override
@@ -15,13 +18,24 @@ public class QuickSort implements ISort {
             quickSort(arr, pi + 1, high);
         }
     }
-
+    /**
+     * Método que intercambia dos número de un arreglo
+     * @param arr el arreglo de enteros
+     * @param i el indice de un número
+     * @param j el indice del otro
+     */
     void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
-
+    /**
+     * método para la partición del quicksort
+     * @param arr el arreglo de números
+     * @param low el indice inicial (0)
+     * @param high el indice final (largo-1)
+     * @return el entero de la partición
+     */
     int partition(int[] arr, int low, int high) {
         int pivot = arr[high];
         int i = (low - 1);

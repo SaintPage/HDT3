@@ -1,4 +1,8 @@
 package HDT3;
+/**
+ * Clase que implementa un ordenamiento bubble sort
+ * @author SaintPage, colaborativo
+ */
 public class BubbleSort implements ISort{
     @Override
     public int [] sort(int[] arr){

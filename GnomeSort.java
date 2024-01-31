@@ -1,5 +1,8 @@
 package HDT3;
-
+/**
+ * Clase que implementa un ordenamiento gnome sort
+ * @author SaintPage, colaborativo
+ */
 public class GnomeSort implements ISort {
 
     @Override

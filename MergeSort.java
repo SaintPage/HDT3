@@ -1,5 +1,8 @@
 package HDT3;
-
+/**
+ * Clase que implementa un ordenamiento merge sort
+ * @author SaintPage, colaborativo
+ */
 public class MergeSort implements ISort {
     private static int LEFT = -1;
     private static int RIGHT = -1;
@@ -37,7 +40,13 @@ public class MergeSort implements ISort {
         return arr;
         
     }
-
+    /**
+     * método para la unión del merge sort
+     * @param arr el arreglo de enteros
+     * @param l el entero izquierdo
+     * @param m el entero medio
+     * @param r el entero derecho
+     */
     void merge(int arr[], int l, int m, int r)
     {
         int n1 = m - l + 1;

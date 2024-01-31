@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
+/**
+ * Clase para las pruebas unitarias Junit
+ */
 public class tests {
     
     @Test
