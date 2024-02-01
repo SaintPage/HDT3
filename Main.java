@@ -13,49 +13,40 @@ public class Main{
 
         int[] list;
         
-
         //QuickSort:
         ISort sorter = new QuickSort();
         list = randomList(3000);
         list = sorter.sort(list);
         writeFile(list, "quick.txt");
         list = sorter.sort(list);
-        // System.out.println("Sorted array: " + Arrays.toString(arr));
 
         //MergeSort:
-        // var arr = new int[] {3, 9, 10, 1, 8, 7, 5, 2};
         ISort ordenar = new MergeSort();
         list = ordenar.sort(list);
         writeFile(list, "merge.txt");
         list = ordenar.sort(list);
-        // System.out.println("El resultado es:");
-        // for (int element: array) {
-        //     System.out.print(element + " ");
-    
 
-        
         // RadixSort:
-        // int arr[] = { 170, 45, 75, 90, 802, 24, 2, 66 };
-        // int n = arr.length;
         RadixSort rs = new RadixSort();
         list = randomList(3000);
         list = rs.sort(list);
         writeFile(list, "radix.txt");
         list = rs.sort(list);
-        // RadixSort.print(arr, n);
-         
-        
 
         //GnomeSort:
-        //int arr[] = { 34, 2, 10, -9 };
         GnomeSort gs = new GnomeSort();
         list = randomList(3000);
         list = gs.sort(list);
         writeFile(list, "gnome.txt");
         list = gs.sort(list);
-        //System.out.println(Arrays.toString(arr));
 
-        
+        //SelectionSort:
+        SelectionSort ss = new SelectionSort();
+        list = randomList(3000);
+        list = gs.sort(list);
+        writeFile(list, "selection.txt");
+        list = ss.sort(list);
+
 
     }
 
