@@ -1,6 +1,6 @@
 package HDT3;
 /**
- * Clase que implementa un ordenamiento bubble sort
+ * Clase que implementa un ordenamiento selectionSort
  * @author SaintPage, colaborativo
  */
 public class SelectionSort implements ISort{
